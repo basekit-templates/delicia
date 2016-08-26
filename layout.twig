@@ -1,0 +1,64 @@
+<!doctype html>
+<!--[if lt IE 7]>
+    <html class="no-js ie6 oldie" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+    <html class="no-js ie7 oldie" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+    <html class="no-js ie8 oldie" lang="en">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="{{ page.seoLang }}">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <meta name="keywords" content="{{ page.keywords }}" />
+    <meta name="description" content="{{ page.description }}" />
+
+    {% if site.favicon %}
+        <link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
+        <link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
+    {% endif %}
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    {% include basekit.headScript %}
+</head>
+
+<body class="{{ page.backgroundClass }} {% block class %}{% endblock %}">
+
+        <!-- Main Widget Zone -->
+        {% block content %}
+        {% endblock %}
+
+
+    {% include basekit.bodyScript %}
+
+     <!-- Nav Menu Script -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')</script>
+
+    <!-- Clickable -->
+    <script src="{{ asset('js/clickable.js')}}"></script>
+
+    <!-- Nav Menu & Blog Search Script -->
+    <script>
+
+        // Nav
+        $( ".navigation-toggle" ).click(function() {
+            $( ".bk-extendednavigation" ).toggleClass( "open" ); // Toggles class open to display/hide the whole navigation
+            $( "body" ).toggleClass( "noscroll" ); // Toggles class open to add noscroll to body
+        });
+
+        // Blog Search
+        $( ".header-search-icon" ).click(function() {
+            $( "body" ).toggleClass( "noscroll blogsearch-open" ); // Add noscroll and blogsearch-open to body
+        });
+
+    </script>
+
+
+</body>
+</html>

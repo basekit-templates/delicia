@@ -1,0 +1,183 @@
+// ---------
+// SLIDESHOW
+// ---------
+
+
+// Slideshow Layout
+// ----------------
+
+// Slideshow Height
+.slides-list,
+.responsiveslideshow .figure {
+    position: relative;
+    min-height: 400px;
+    @media @tablet {
+        min-height: 300px;
+    }
+    @media @mobile {
+        min-height: 200px;
+    }
+}
+
+// Slideshow Images
+// ----------------
+
+// Use Background-image Method
+.responsiveslideshow .figure {
+    background-size: cover;
+    background-position: center;
+}
+// Hide Img Element
+.responsiveslideshow .image { display: none; }
+
+// Slideshow Image Captions
+// ------------------------
+
+.responsiveslideshow .caption {
+    width: 98%;
+    padding: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 1%;
+    right: 1%;
+    background-color: hsla(hue(@color-swatch7),
+                           saturation(@color-swatch7),
+                           lightness(@color-swatch7),
+                           0.8);
+    @media @tablet {
+        padding: 10px;
+        bottom: 7px;
+    }
+    @media @mobile {
+        bottom: 5px;
+    }
+    .image-title {
+        font-family:@font__feature-headline--font-family;
+        font-size:16px;
+        font-weight: 400;
+        line-height:26px;
+        color: @color-swatch4;
+        letter-spacing: inherit;
+    }
+    .image-description {
+        font-family:@font__feature-strapline--font-family;
+        font-size:16px;
+        font-weight: 400;
+        line-height:26px;
+        color: @color-swatch5;
+        letter-spacing: inherit;
+    }
+}
+
+// Slideshow Navigation
+// --------------------
+
+.slide-navigation {
+    // Same height as images
+    min-height: 400px;
+    @media @tablet {
+        min-height: 300px;
+    }
+    @media @mobile {
+        min-height: 200px;
+    }
+    // Removes button text
+    .control-text {
+        display: none;
+    }
+    .icon:before {
+        margin-right: 0;
+    }
+}
+
+// Slideshow Navigation for Tablet and Desktop
+@media only screen and (min-width:480px) {
+    .slide-navigation {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        .button {
+            color: @color__body--background;
+            padding: 0;
+            outline: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+        .button:hover {
+            color: @color__navigation--text--hover;
+            background-color: transparent;
+        }
+        .previous-button,
+        .next-button,
+        .pause-toggle {
+            position: absolute;
+            top: 0;
+            width: 30px;
+            height: 100%;
+            background-color: transparent;
+        }
+        .previous-button {
+            left: 0;
+        }
+        .next-button {
+            right: 0;
+        }
+        .pause-toggle {
+            right: 50%;
+            margin-right: -15px;
+        }
+    }
+}
+
+// Slideshow Navigation for Mobile
+@media only screen and (max-width:480px) {
+    .slide-navigation {
+        margin: 20px 0;
+        min-height: 0;
+        text-align: center;
+        .button {
+            width: auto;
+            margin: 0 10px;
+        }
+        // Centre pause button
+        .pause-toggle {
+            margin: 0 auto;
+        }
+    }
+}
+
+// Slideshow Pagination
+// --------------------
+
+.slide-pagination {
+    position: relative;
+}
+
+.slide-pagination .pagination-list {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    .pagination-item {
+        margin: 0 2px;
+        display: inline-block;
+    }
+    .button {
+        width: 8px;
+        height: 8px;
+        min-height: inherit;
+        padding: 0;
+        text-indent: -9999px;
+        overflow: hidden;
+        box-shadow: none;
+        -webkit-border-radius: 50px;
+           -moz-border-radius: 50px;
+                border-radius: 50px;
+        background-color: darken(@color__body--background, 20%);
+    }
+    .pagination-item.selected .button {
+        background-color: @color__secondary;
+    }
+}

@@ -1,0 +1,200 @@
+// -------
+// GALLERY
+// -------
+
+// Gallery 3 column layout
+// -----------------------
+
+// Title and description colour
+.image-title,
+.image-description {
+    color: @color__body--background;
+}
+
+// Gallery list container
+.gallery-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+// Gallery items
+.gallery .gallery-item {
+    position: relative;
+    width: 32%;
+    margin-bottom: 20px;
+    // Display 50% at tablet
+    @media @tablet {
+        width: 48%;
+    }
+    // Display 100% at mobile
+    @media @mobile {
+        width: 100%;
+    }
+}
+
+// Text
+.gallery-item {
+    .image-title {
+        font-family:@font__feature-headline--font-family;
+        font-size:16px;
+        font-weight: 400;
+        line-height:26px;
+        color: @color-swatch4;
+        letter-spacing: inherit;
+        @media only screen and (min-width : 769px) {
+            margin-bottom: 5px;
+        }
+    }
+    .image-description {
+        font-family:@font__feature-strapline--font-family;
+        font-size:16px;
+        font-weight: 400;
+        line-height:22px;
+        color: @color-swatch5;
+        letter-spacing: inherit;
+    }
+    .caption-link:hover {
+        text-decoration: none;
+        .image-title,
+        .image-description {
+            color: @color__secondary;
+        }
+    }
+}
+
+// Gallery item links
+.gallery .image-link {
+    display: block;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @media @tablet {
+        height: 210px;
+    }
+}
+
+// Gallery hide img element (uses background cover technique)
+.gallery .image {
+    display: none;
+}
+
+// Gallery caption
+.gallery .caption {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    margin: 0;
+    padding: 20px;
+    background-color: hsla(hue(@color-swatch7),
+                           saturation(@color-swatch7),
+                           lightness(@color-swatch7),
+                           0.8);
+    opacity: 0;
+    .transition( all, 0.5s, ease );
+}
+
+// Gallery show caption on hover
+.gallery .figure:hover .caption {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    display: block;
+    width: auto;
+    opacity: 1;
+    .transition( all, 0.5s, ease );
+}
+
+// Gallery Images in Responsive Columns
+
+// Two Columns
+.columns-two-left,
+.columns-two-right {
+    .gallery__image-link {
+        height: 150px;
+        @media @tablet {
+            height: 107px;
+        }
+        @media @mobile {
+            height: 200px;
+        }
+    }
+    .gallery__caption {
+        padding: 10px;
+        // hide description on desktop
+        @media only screen and (min-width: 768px) {
+            .image-title {
+                font-size: bkscale(@font__p--font-size,0.8);
+                line-height: bkscale(@font__p--line-height,0.8);
+            }
+            .image-description {
+                display: none;
+            }
+        }
+    }
+    // hide caption on tablet only
+    @media only screen and (max-width : 768px) and (min-width : 480px) {
+        .gallery__figure:hover .gallery__caption {
+            display: none;
+        }
+    }
+}
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right {
+    .gallery__image-link {
+        height: 95px;
+        @media @tablet {
+            height: 69px;
+        }
+        @media @mobile {
+            height: 200px;
+        }
+    }
+    // hide caption on desktop and tablet
+    @media only screen and (min-width: 480px) {
+        .gallery__figure:hover .gallery__caption {
+            display: none;
+        }
+    }
+}
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .gallery__image-link {
+        height: 69px;
+        @media @tablet {
+            height: 107px;
+        }
+        @media @mobile {
+            height: 200px;
+        }
+    }
+    // hide caption on desktop and tablet
+    @media only screen and (min-width: 480px) {
+        .gallery__figure:hover .gallery__caption {
+            display: none;
+        }
+    }
+}
+
+

@@ -1,0 +1,26 @@
+{% extends "layout.twig" %}
+{% block class %}bk-pt-blogpostlist{% endblock %}
+{% block content %}
+
+<!-- Header Include -->
+    {% include "includes/header.twig" %}
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Page Content -->
+        <section class="template-content">
+
+            <!-- Main Widget Zone -->
+            {{zone('main')|raw}}
+
+        </section>
+        <!-- End Page Content -->
+
+    </div>
+    <!-- End Container -->
+
+    <!-- Footer Include -->
+    {% include "includes/footer.twig" %}
+
+{% endblock %}

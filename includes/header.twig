@@ -1,0 +1,26 @@
+<!-- Template Widgets -->
+
+<div class="flex-container">
+
+    <div class="tablet-top-bar"></div>
+    <div class="flex-item flex-button">
+        {{widget('clicktocall', 'headerclicktocall', {
+          'phoneText': '0123 456 7890',
+          'fontSize': '14px',
+          'align': 'widget-align-center'
+        })|raw}}
+    </div>
+    <div class="flex-item flex-nav">
+        {{widget('extendednavigation', 'navigation', {"align":"right"})|raw}}
+    </div>
+    <div class="flex-item flex-logo">
+        {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+    </div>
+    <div class="flex-item flex-companyname">
+        {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+    </div>
+
+</div>
+<div class="default-header-bottom-line"></div>
+
+<!-- End Template Widgets -->

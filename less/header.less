@@ -1,0 +1,456 @@
+// ----------------
+// STYLE FOR HEADER
+// ----------------
+
+// ---------------
+// Flexbox
+// ---------------
+
+.flex-container {
+    padding: 30px 5% 20px;
+
+    .flex-display;
+    .flex-wrap(wrap);
+    .justify-content(flex-start);
+    .align-items(center);
+    .align-content(space-between);
+
+    @media @tablet {
+        padding: 0;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+// Global style for flex items
+.flex-item {
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    margin-bottom: 10px;
+    @media @tablet {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        margin-bottom: 0;
+    }
+    // Reorder items for desktop
+    @media only screen and (min-width : 770px) {
+        &.flex-button {
+            -webkit-box-ordinal-group: 5;
+            -moz-box-ordinal-group: 5;
+            -webkit-order: 4;
+            -ms-flex-order: 4;
+            order: 4;
+            margin: 4px 0 12px auto;
+        }
+        &.flex-nav {
+            -webkit-box-ordinal-group: 4;
+            -moz-box-ordinal-group: 4;
+            -webkit-order: 3;
+            -ms-flex-order: 3;
+            order: 3;
+        }
+        &.flex-logo {
+            -webkit-box-ordinal-group: 2;
+            -moz-box-ordinal-group: 2;
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+        }
+        &.flex-companyname {
+            -webkit-box-ordinal-group: 3;
+            -moz-box-ordinal-group: 3;
+            -webkit-order: 2;
+            -ms-flex-order: 2;
+            order: 2;
+        }
+    }
+}
+// Social icons, logo and companyname
+.flex-button,
+.flex-logo,
+.flex-companyname {
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+}
+
+// Navigation widget
+.flex-nav {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    @media @tablet {
+        width: 100%;
+        .navigation-toggle {
+            height: 44px;
+        }
+    }
+}
+
+// Spacing for logo and company name on tablet and mobile
+
+@media @tablet {
+    .flex-logo {
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+        .logo-image {
+            margin: 0 auto;
+        }
+    }
+    .flex-companyname {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+@media @mobile {
+    .flex-logo {
+        margin-top: 20px;
+    }
+    .flex-companyname {
+        margin-bottom: 15px;
+    }
+}
+
+
+// ------------------
+// Default Page
+// ------------------
+
+.bk-pt-default,
+.bk-pt-donate {
+    .default-header-bottom-line {
+        height: 1px;
+        width: 100%;
+        background-color: darken(@color-swatch1, 9%);
+        margin-bottom: 30px;
+    }
+}
+
+
+// -------------------
+// Tablet top Bar
+// -------------------
+
+.tablet-top-bar {
+    @media @tablet {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 44px;
+        background-color: @color-swatch2;
+    }
+}
+
+
+
+
+// ------------------------------
+// Click to Call Widget in header
+// ------------------------------
+
+.flex-button {
+    .clicktocall {
+        padding: 5px 15px;
+        margin-left: 15px;
+        border: 1px solid lighten(@color-swatch3,30%);
+        @media @tablet {
+            padding: 0 20px;
+            margin-left: 0;
+            border: none;
+        }
+    }
+    .phone-number-link {
+        white-space: nowrap;
+        .label {
+            font-family: @font__navigation--font-family;
+            color: @color__navigation--text;
+            font-size: bkscale(@font__navigation--font-size,0.9);
+            font-weight: @font__navigation--font-weight;
+            letter-spacing: @font__navigation--letter-spacing;
+            background-color: transparent;
+            @media @tablet {
+                color: @color-swatch7;
+            }
+            @media @mobile {
+                display: none;
+            }
+        }
+        &:before {
+            color: @color__navigation--text;
+            @media @tablet {
+                color: @color-swatch7;
+            }
+        }
+        @media @tablet {
+            padding: 0;
+            line-height: 44px;
+            background-color: transparent;
+        }
+        @media @mobile {
+            text-align: right;
+            &:before {
+                font-size: 20px;
+            }
+        }
+    }
+    @media @tablet {
+        align-self: flex-start;
+        margin-top: 0;
+        margin-left: 0;
+        width: auto;
+        height: 44px;
+        margin-right: 30%;
+        background-color: transparent;
+        z-index: 9999;
+    }
+}
+
+
+
+
+// ----------
+// Navigation
+// ----------
+
+// Parent nav items, adds arrow icon
+.item-name--parent:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin-left: 4px;
+    border: 5px solid transparent;
+    border-top-color: @color__navigation--text;
+    @media @tablet {
+        border-top-color: @color-swatch7;
+    }
+}
+.item-name--parent:hover:after {
+    border-top-color: @color__navigation--text--hover;
+    @media @tablet {
+        border-top-color: lighten(@color-swatch2, 40%);
+    }
+}
+
+// Selected nav item
+
+.navigation-item.selected > .item-name {
+    color: @color__navigation--text--selected;
+    @media @tablet {
+        color: lighten(@color__navigation--text--selected, 40%);
+    }
+}
+
+
+// Hide toggle on desktop
+.navigation-toggle {
+    display: none;
+    @media @tablet {
+        display: inline-block;
+        position: absolute;
+        height: 44px;
+        width: 40px;
+        right: 5%;
+        top: -44px;
+        text-indent: 1000px;
+        overflow: hidden;
+        line-height: 0;
+        background-color: transparent;
+        .border-radius(0px);
+        &:before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            top: 0;
+            left: 50%;
+            right: 0;
+            margin-top: 15px;
+            margin-left: -13px;
+            background: @color-swatch7;
+            box-shadow: 0 7px 0 @color-swatch7;
+            .transition( all, 0.5s, ease );
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            top: 14px;
+            left: 50%;
+            right: 0;
+            margin-top: 15px;
+            margin-left: -13px;
+            background: @color-swatch7;
+            .transition( all, 0.5s, ease );
+        }
+    }
+    &:hover {
+        background-color: @color-swatch2;
+        &:before {
+            background: lighten(@color-swatch2, 40%);
+            box-shadow: 0 7px 0 lighten(@color-swatch2, 40%);
+        }
+        &:after {
+            background: lighten(@color-swatch2, 40%);
+        }
+    }
+}
+
+
+// Toggle Button Open State
+.open & {
+    &.navigation-toggle {
+        background-color: @color-swatch2;
+        &:before {
+            width: 26px;
+            margin-top: 21px;
+            margin-left: -4px;
+            background: @color-swatch1;
+            box-shadow: none;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            .transition( all, 0.5s, ease );
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 3px;
+            top: 0;
+            left: 50%;
+            right: 0;
+            margin-top: 21px;
+            margin-left: -4px;
+            background: @color-swatch1;
+            box-shadow: none;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            .transition( all, 0.5s, ease );
+        }
+    }
+}
+
+// Clears margin on ul, hides navigatio on mobile (made visible in conjunction with navigation-toggle)
+.navigation-list {
+    margin: 0;
+    width: auto;
+    @media @tablet {
+        display: none;
+        width: 100%;
+        &.open {
+            display: block;
+        }
+    }
+}
+
+// Sets background colour to navigation and dropdowns
+.extendednavigation {
+    @media @tablet {
+        background-color: @color-swatch2;
+    }
+}
+
+.navigation-list--children {
+    @media @tablet {
+        background-color: lighten(@color-swatch2, 3%);
+    }
+}
+
+.navigation-list--children {
+    left: inherit;
+    right: 0;
+    white-space: normal;
+    border: 1px solid darken(@color__body--background, 10%);
+    @media @tablet {
+        border: none;
+    }
+    .navigation-item--child {
+        @media only screen and (min-width:770px) {
+            border-bottom: 1px solid darken(@color__body--background, 5%);
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// Sets nav items to full width on mobile and tablet
+.navigation-item {
+    @media @tablet {
+        display: block;
+    }
+}
+
+.navigation-item .item-name {
+    padding: 4px 12px;
+    @media @tablet {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 5%;
+        padding-right: 5%;
+        color: @color-swatch7;
+        &:hover {
+            color: lighten(@color-swatch4, 40%);
+        }
+    }
+}
+
+// Fix overlay in editor on tablet and mobile
+
+div#page-zones__template-widgets__extendednavigation-navigation-bk-overlay,
+[data-widget-type="extendednavigation"] .widget-overlay {
+    @media @tablet {
+        width: 30%;
+        height: 44px;
+        top: -44px !important;
+        left: inherit !important;
+    }
+}
+
+
+
+
+// --------------
+// Brand
+// --------------
+
+.logo {
+  margin-right: 10px;
+  @media @tablet {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.company-link {
+    word-break: normal;
+}
+
+.company-link:hover {
+    color: @color-swatch2;
+    text-decoration: none;
+}
+
+@color__header--background: @color__body--background;
+@color__navigation--background:transparent;
