@@ -24,3 +24,12 @@
     {% include "includes/footer.twig" %}
 
 {% endblock %}
+
+{% block scripts %}
+    <script>
+        if($(".post-article--has-image").length > 0)
+        {
+        $("body").addClass("blog-post--has-image");
+        }
+    </script>
+{% endblock %}

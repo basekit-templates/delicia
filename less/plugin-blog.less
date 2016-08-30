@@ -20,22 +20,36 @@
     // Blog Article
     .post-article {
         position: relative;
+        width: 100%;
+        margin-bottom: 0;
+        padding: 0;
+
         .flex-display;
         .justify-content(center);
         .flex-wrap(wrap);
         .align-items(center);
         .align-content(center);
-        width: 100%;
-        margin-bottom: 0;
-        padding: 0;
 
         border-bottom: 1px solid darken(@color-swatch1, 9%);
+
+    }
+
+    .post-article,
+    .post-image .image-link {
+        min-height: 350px;
+        @media only screen and (max-width: 800px) {
+            min-height:250px;
+        }
     }
     .title-link:hover {
         color: fade(@color-swatch2, 70%);
         text-decoration: none;
     }
-    .post-content {
+    .post-article + .post-content { // Posts with NO image
+        max-width: 700px;
+        text-align: center;
+    }
+    .post-image + .post-content { // Posts with IMAGE
         -webkit-flex: 1 1 50%;
         -ms-flex: 1 1 50%;
         flex: 1 1 50%;
@@ -52,7 +66,6 @@
             background-position: 0;
             position: relative;
             display: inline-block;
-            min-height: 300px;
             width: 100%;
             background-size: cover;
             background-position: 50%;
@@ -73,12 +86,15 @@
             padding: 0 40px;
         }
     }
+    .post-content .post-title {
+        margin-top: 50px;
+    }
 
     // Read Button
     .read-more {
         display: inline-block;
         padding: 6px 15px 10px;
-        margin-top: 15px;
+        margin: 10px 0;
         color: @color__button--background;
         background-color: transparent;
         border: 1px solid @color__button--background;
@@ -89,10 +105,17 @@
     }
 
     // Blog Post Footer
+
     .post-footer {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .post-image ~ .post-footer {
         position: absolute;
         left: 50%;
-        top: 0;
+        top: 20px;
         @media only screen and (max-width: 800px) {
             position: relative;
             left: inherit;
