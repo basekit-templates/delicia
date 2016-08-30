@@ -72,9 +72,10 @@
 
 
 
-// Decrease margin top for buttons below content widgets
-// -----------------------------------------------------
+// Decrease margin top for content widgets and buttons below content widgets
+// -------------------------------------------------------------------------
 
+.widget[data-name="content"] + .widget[data-name="content"],
 .widget[data-name="content"] + .widget[data-name="button"] {
     margin-top: 20px;
 }
