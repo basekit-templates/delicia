@@ -15,6 +15,8 @@
     .align-items(center);
     .align-content(space-between);
 
+    border-bottom: 1px solid darken(@color-swatch1, 9%);
+
     @media @tablet {
         padding: 0;
         -webkit-box-orient: vertical;
@@ -127,16 +129,18 @@
 }
 
 
-// ------------------
-// Default Page
-// ------------------
+// -----------------------
+// Bottom Margin in Header
+// -----------------------
 
-.bk-pt-default,
-.bk-pt-donate {
-    .default-header-bottom-line {
-        height: 1px;
-        width: 100%;
-        background-color: darken(@color-swatch1, 9%);
+.bk-pt-home {
+    .flex-container {
+        border-bottom: none;
+    }
+}
+
+.bk-pt-default {
+    .flex-container {
         margin-bottom: 30px;
     }
 }
