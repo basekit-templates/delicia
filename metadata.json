@@ -4,7 +4,7 @@
     "thumbnail": "thumbnail.png",
     "screenshot": "delicia-screenshot.jpg",
     "templateType":"standard",
-    "pageTypes": ["home","donate", "blogpostlist"],
+    "pageTypes": ["home","blogpost", "blogpostlist"],
     "images": [
         "images/feature.jpg",
         "images/logo.png"

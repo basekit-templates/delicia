@@ -2,6 +2,32 @@
 // BLOG PLUGIN
 // -------------------------------------------
 
+// Blog Posts Style
+// -------------------------------------------
+
+.blog-post--has-image {
+    @media only screen and (min-width: 901px) {
+        .post-article {
+            .flex-display;
+            .justify-content(space-around);
+            .flex-wrap(wrap);
+            .align-items(stretch);
+            .align-content(space-around);
+        }
+        .post-image,
+        .post-content {
+            -webkit-flex: 0 1 50%;
+            -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+        }
+        .post-footer {
+            width: 50%;
+            margin-left: 50%;
+        }
+    }
+}
+
+
 // Blog Posts List Style
 // -------------------------------------------
 
@@ -264,3 +290,5 @@
         margin: 0 auto;
     }
 }
+
+
