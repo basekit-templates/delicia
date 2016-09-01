@@ -2,26 +2,22 @@
 {% block class %}bk-pt-blogpost{% endblock %}
 {% block content %}
 
-<!-- Header Include -->
+<div class="blog-post-wrapper">
+
+    <!-- Header Include -->
     {% include "includes/header.twig" %}
 
-    <!-- Container -->
-    <div class="container">
-
-        <!-- Page Content -->
-        <section class="template-content">
-
+        <!-- Container -->
+        <div class="container">
             <!-- Main Widget Zone -->
             {{zone('main')|raw}}
-
-        </section>
-        <!-- End Page Content -->
-
-    </div>
-    <!-- End Container -->
+        </div>
+        <!-- End Container -->
 
     <!-- Footer Include -->
     {% include "includes/footer.twig" %}
+
+</div>
 
 {% endblock %}
 

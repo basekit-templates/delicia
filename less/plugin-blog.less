@@ -5,30 +5,116 @@
 // Blog Posts Style
 // -------------------------------------------
 
-.blog-post--has-image {
-    @media only screen and (min-width: 901px) {
+.bk-pt-blogpost.blog-post--has-image {
+    @media only screen and (min-width: 1024px) {
         .post-article {
-            .flex-display;
-            .justify-content(space-around);
-            .flex-wrap(wrap);
-            .align-items(stretch);
-            .align-content(space-around);
+            overflow: hidden;
         }
+        .post-article:last-child {
+            margin-bottom: 0;
+        }
+        .post-article,
         .post-image,
+        .image-link,
+        .post-content,
+        .post-footer {
+            min-height: 100vh;
+        }
+        
+        .post-image {
+            position: relative;
+            width: 50%;
+        }
+        .image-link {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            
+            background-position: inherit;
+            background-size: cover;
+            background-position: center;
+        }
         .post-content {
-            -webkit-flex: 0 1 50%;
-            -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
+            width: 50%;
+            margin-left: 50%;
+            padding: 40px 60px;
+            position: absolute;
+            overflow: scroll;
+
+            .flex-display;
+            .flex-wrap(wrap);
+            .justify-content(flex-start);
+            .align-content(center);
+
+        }
+
+        .post-image,
+        .sharing-links {
+            position: absolute;
+            left: 0;
+        }
+        
+        .image {
+            display: none;
         }
         .post-footer {
             width: 50%;
-            margin-left: 50%;
+            position: absolute;
+            padding: 30px;
+        }
+
+        .timestamp,
+        .post-attributes {
+            position: absolute;
+            bottom: 10px;
+        }
+
+        .post-attributes {
+            bottom: 40px;
+        }
+
+        .sharing-links {
+            left: 30px;
+            top: 50%;
+            margin-top: -90px;
+        }
+        .network-item {
+            display: block;
+            margin-top: 0;
+        }
+        .button {
+            width: 40px;
+            height: 40px;
+            min-height: inherit;
+            padding: 0;
+            margin-bottom: 20px;
+            .border-radius (100px);
+            font-size: 0;
+        }
+        // Background colour for sharing buttons
+        .button {
+            &.icon--twitter {
+                background-color: #4099FF;
+            }
+            &.icon--facebook {
+                background-color: #3b5998;
+            }
+            &.icon--googleplus {
+                background-color: #d34836;
+            }
+            &.icon:before {
+                display: inline-block;
+                font-size: 18px;
+                padding: 7px 11px;
+            }
         }
     }
 }
 
 
-// Blog Posts List Style
+
+
+// Posts List Style
 // -------------------------------------------
 
 .blogpostlist {
