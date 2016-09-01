@@ -223,6 +223,7 @@
             "color__ecomproductslist-product-item--background": "@color-swatch7",
             "color__ecomproductslist-product-title--text": "@color-swatch2",
             "color__ecomproduct-images--background": "transparent",
+            "color__ecomproduct-images--background": "darken(@color-swatch1, 6%)",
             "color__ecomproduct-content--background": "@color-swatch7",
             "color__ecomproduct-title--text": "@font-swatch1-color",
             "color__ecomproduct-price--text": "@font-swatch1-color"
