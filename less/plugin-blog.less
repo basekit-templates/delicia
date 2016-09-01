@@ -18,7 +18,7 @@
         .image-link,
         .post-content,
         .post-footer {
-            min-height: 100vh;
+            height: 90vh;
         }
         
         .post-image {
@@ -63,10 +63,13 @@
             padding: 30px;
         }
 
-        .timestamp,
+        time,
         .post-attributes {
             position: absolute;
             bottom: 10px;
+            &.timestamp,a,p {
+                color: @color-swatch7;
+            }
         }
 
         .post-attributes {

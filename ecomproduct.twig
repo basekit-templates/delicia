@@ -1,0 +1,56 @@
+{% extends "layout.twig" %}
+{% block class %}bk-pt-ecomproduct{% endblock %}
+{% block content %}
+
+<div class="ecomproduct-page">
+
+    <!-- Header Include -->
+    {% include "includes/header.twig" %}
+
+        <!-- Container -->
+        <div class="container">
+            <!-- Main Widget Zone -->
+            {{zone('main')|raw}}
+        </div>
+        <!-- End Container -->
+
+    <!-- Footer Include -->
+    {% include "includes/footer.twig" %}
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    <!-- Image zoom on hover on single product -->
+    <script>
+        // Run immediately and assign a global variable (touch_enabled) so it is accessible anywhere.
+
+        // First try to detect (not entirely reliable)
+        window.touch_enabled = !!('ontouchstart' in window) || !!('onmsgesturechange' in window);
+
+        // Overwrite/set touch enabled to false on mousemove
+        $(window).on('mousemove', function() { window.touch_enabled = false; });
+
+        // Overwrite/set touch enabled to true on touchstart
+        $(window).on('touchstart', function () { window.touch_enabled = true; });
+
+        if(window.touch_enabled == false){
+            $('.product-image')
+            // tile mouse actions
+            .on('mouseover', function(){
+              $(this).children('.image-link').css({'transform': 'scale(2)'});
+            })
+            .on('mouseout', function(){
+              $(this).children('.image-link').css({'transform': 'scale(1)'});
+            })
+            .on('mousemove', function(e){
+              $(this).children('.image-link').css({'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + '% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +'%'});
+            })
+        }
+
+    </script>
+
+{% endblock %}
