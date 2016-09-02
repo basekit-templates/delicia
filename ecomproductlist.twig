@@ -1,0 +1,87 @@
+{% extends "layout.twig" %}
+{% block class %}bk-pt-store{% endblock %}
+
+{% block content %}
+
+<div class="store-page">
+
+    <!-- Header Include -->
+    {% include "includes/header.twig" %}
+
+        <!-- Container -->
+        <div class="container filter-container">
+
+            <!-- Main Widget Zone -->
+            {{zone('main')|raw}}
+
+            <div class="toggle-filter">
+               <div class="toggle-items">
+                    <div class="toggle-item"></div>
+                    <div class="toggle-item"></div>
+                    <div class="toggle-item"></div>
+               </div>
+               <div class="toggle-active"></div>
+            </div>
+
+        </div>
+        <!-- End Container -->
+
+    <!-- Footer Include -->
+    {% include "includes/footer.twig" %}
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+        $(document).on("click", ".toggle-filter", function() {
+            $( "body" ).toggleClass( "filters-open" );
+        });
+
+        $(function() {
+
+        $(".toggle-filter").click(function() {
+
+            $(this).prepend('<span class="animate"></span>')
+                $(".animate").animate({
+                    width: 80,
+                    height: 80,
+                    opacity: 0
+                 },
+                 500,
+                 function() {
+                    $(this).remove();
+                 });
+
+                $(this).toggleClass('active');
+           })
+        });
+
+        $(document).ready(function(){
+            if ( $(".button").hasClass("button--clear")) {
+                $("body").addClass("clear-filters");
+            }
+        });
+    </script>
+
+    <!-- Masonry -->
+
+    <!-- imagesLoaded -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Masonry -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
+
+    <script>
+        var container = document.querySelector('.product-list');
+
+        imagesLoaded( container, function() {
+            var msnry = new Masonry( container, {
+                itemSelector: '.product-item'
+            });
+        });
+    </script>
+
+{% endblock %}

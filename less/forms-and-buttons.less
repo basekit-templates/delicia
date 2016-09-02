@@ -46,16 +46,10 @@ input[type="search"]:focus {
 
 // Signup
 // Blog
-// Ecom Form
-// Ecom Filters
-// Ecom Search
 // -----------------------------
 
 .signupform .form-body,// Signup
-.blogsearch .form-body,// Blog
-.ecomproductslist .form,// Ecom Form
-.ecomproductslist .fieldset--filters .form-body,// Ecom Filters
-.ecomproductslist .fieldset--search .form-body { // Ecom Search
+.blogsearch .form-body { // Blog 
     .flex-display;
     .justify-content(space-between);
     .flex-wrap(nowrap);
@@ -204,11 +198,8 @@ legend,
 
 .contactform,// Contact Form
 .signupform .form-body,// Signup
-.blogsearch .form-body,// Blog
-.ecomproductslist .form,// Ecom Form
-.ecomproductslist .fieldset--filters .form-body,// Ecom Filters
-.ecomproductslist .fieldset--search .form-body,// Ecom Search
-.ecomproductslist .form-group {
+.blogsearch .form-body { // Blog
+
     @media only screen and (max-width:600px) {
         display: inline-block;
         width: 100%;
@@ -242,8 +233,8 @@ legend,
         border: @form-border;
     }
     .signupform .form-body,// Signup
-    .blogsearch .form-body,// Blog
-    .ecomproductslist .fieldset--search .form-body .form-group:last-child { // Ecom Search
+    .blogsearch .form-body { // Blog
+    
         button,
         .button {
             border: 2px solid @color__button--border;
@@ -263,41 +254,10 @@ legend,
             width: 100%;
         }
     }
-    // Ecom form - Same style as on Tablet
-    .ecomproductslist .form { // Ecom Form
-        display: inline-block;
-        width: 100%;
-        .form-group:last-child {
-            margin-right: 0;
-        }
-    }
-    .ecomproductslist .form, // Ecom Form
-    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
-    .ecomproductslist .fieldset--search .form-body,// Ecom Search
-    .ecomproductslist .form-group {
-        @media only screen and (max-width : 950px) {
-            display: inline-block;
-            width: 100%;
-            margin-right: 0;
-            .input {
-                margin-bottom: 10px;
-            }
-            .button {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
-                white-space: normal;
-            }
-        }
-    }
     // Same style as Mobile
     .contactform,// Contact Form
     .signupform .form-body,// Signup
-    .blogsearch .form-body,// Blog
-    .ecomproductslist .form,// Ecom Form
-    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
-    .ecomproductslist .fieldset--search .form-body,// Ecom Search
-    .ecomproductslist .form-group {
+    .blogsearch .form-body { // Blog
         display: inline-block;
         width: 100%;
         margin-right: 0;
@@ -310,127 +270,6 @@ legend,
             padding: 8px 20px;
             white-space: normal;
         }
-    }
-}
-
-// Ecom Products Filter
-// --------------------
-
-// Ecom Form Background Colour
-.ecomproductslist .form {
-    float: left;
-    width: 100%;
-}
-
-
-// Hide Legend
-.ecomproductslist .legend {
-    display: none;
-}
-
-// Flexbox form on Desktop
-.fieldset--search {
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-    .form-group {
-        margin-right: 0;
-    }
-    .form-group:last-child {
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-    }
-}
-.fieldset--filters {
-    -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -webkit-flex: 1 1 70%;
-    -ms-flex: 1 1 70%;
-    flex: 1 1 70%;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-    .form-group {
-        -webkit-flex: 0 1 100%;
-        -ms-flex: 0 1 100%;
-        flex: 0 1 100%;
-    }
-}
-
-// Flexbox form on Tablet
-.ecomproductslist .form { // Ecom Form
-    @media @tablet {
-        .flex-display;
-        .flex-direction(column);
-        .justify-content(flex-start);
-        .flex-wrap(nowrap);
-        .align-items(stretch);
-        .align-content(stretch);
-
-        .fieldset--search,
-        .fieldset--filters {
-            -webkit-flex: 0 1 auto;
-            -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-        }
-        .form-group:last-child {
-            margin-right: 0;
-        }
-    }
-}
-
-// Ecom Clear-Button
-// -----------------
-
-.ecomproductslist .form .fieldset--search .button--clear {
-    margin-left: 48px;
-    padding: 10px 20px;
-    @media @tablet {
-        margin-left: 20px;
-    }
-    @media @mobile {
-        margin-left: 0;
-    }
-}
-
-// Two Columns
-.columns-two-left,
-.columns-two-right {
-    .ecomproductslist .form .fieldset--search .button--clear {
-        margin-left: 20px;
-        @media @tablet {
-            margin-left: 0;
-        }
-    }
-}
-
-// Three Columns
-.columns-three-left,
-.columns-three-middle,
-.columns-three-right,
-// Four Columns
-.columns-four-first,
-.columns-four-second,
-.columns-four-third,
-.columns-four-fourth {
-    .ecomproductslist .form .fieldset--search .button--clear {
-        margin-left: 0;
     }
 }
 
@@ -462,8 +301,8 @@ button,
 // Buttons in Forms
 
 .signupform .form-body,// Signup
-.blogsearch .form-body,// Blog
-.ecomproductslist .fieldset--search .form-body .form-group:last-child { // Ecom Search
+.blogsearch .form-body { // Blog
+
     button,
     .button {
         border-left: none;

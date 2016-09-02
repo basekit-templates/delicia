@@ -15,8 +15,6 @@
     .align-items(center);
     .align-content(space-between);
 
-    border-bottom: 1px solid darken(@color-swatch1, 9%);
-
     @media @tablet {
         padding: 0;
         -webkit-box-orient: vertical;
@@ -133,14 +131,10 @@
 // Bottom Margin in Header
 // -----------------------
 
-.bk-pt-home {
-    .flex-container {
-        border-bottom: none;
-    }
-}
 
 .bk-pt-default {
     .flex-container {
+        border-bottom: 1px solid darken(@color-swatch1, 9%);
         margin-bottom: 30px;
     }
 }

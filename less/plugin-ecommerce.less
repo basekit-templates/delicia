@@ -16,11 +16,28 @@
 // Product list widget
 // -------------------
 
+// Product filters
+
+
+
 // Style for Products Filter is in "forms-and-buttons.less"
 
-// Header
+.ecomproductslist__product-item {
+    display: inline-block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: 33.3%;
+        vertical-align: top;
+        // Display at 100% at mobile
+        @media @mobile {
+            margin-right: 0!important;
+            width: 100%;
+        }
+}
 
-.listing-title {
+/*.listing-title {
     text-align: center;
     margin: 12px 0 30px;
     float: left;
@@ -75,7 +92,6 @@
 }
 
 .product-item-title a {
-    color: @color__ecomproductslist-product-title--text;
     font-size: bkscale(@font__h3--font-size,0.8);
     line-height: bkscale(@font__h3--line-height,0.8);
         &:hover {
@@ -124,7 +140,7 @@
             width: 100%;
         }
     }
-}
+}*/
 
 
 
@@ -178,7 +194,6 @@
         background-color: @color__ecomproductslist-product-item--background;
     }
     &__product-item-title .title-link {
-        color: @color__ecomproductslist-product-title--text;
         &:hover {
             color: @color-swatch3;
         }
