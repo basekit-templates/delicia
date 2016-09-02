@@ -178,7 +178,6 @@
 //  Ecommerce Filters
 // -----------------------------
 
-
 .toggle-filter {
     cursor: pointer;
     position: absolute;
@@ -493,15 +492,20 @@ form.ecomproductslist__form {
 	}
 }
 
+.bk-pt-store {
+    .product-filters {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 // Product Filters
 .product-filters {
     background-color: @color__footer--background;
     .flex-order(1);
-    max-height: 0;
-    opacity: 0;
     padding: 0;
     transition: all 0.35s ease-in-out, max-height 0.25s ease-in-out;
-    visibility: hidden;
 
 	// Legend
 	legend {
