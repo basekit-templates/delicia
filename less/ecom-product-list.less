@@ -55,7 +55,11 @@
 	}
 
 	&__product-item {
-        width: 33.33%;
+        width: 25%;
+
+        @media only screen and (max-width : 1600px) {
+            width: 33.33%;
+        }
         
 		/*padding: 0 30px 25px;*/
 
@@ -89,10 +93,14 @@
 
 	&__product-item-image,
 	&__image-link {
-        width: 100%;
 		line-height: 100%!important;
 		height: auto!important;
 	}
+
+    &__product-item-image .image {
+        width: 100%;
+        max-width: inherit;
+    }
 
 
     &__image.image--thumb {
