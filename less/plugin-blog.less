@@ -120,18 +120,6 @@
 }
 
 .responsivecolumns {
-/*    .blogpostlist {
-        .post-content .post-title,
-        .post-content .post-excerpt {
-            padding: 0;
-        }
-        .post-image ~ .post-footer {
-            
-        }
-        .post-footer .timestamp {
-            margin: 0 0 10px;
-        }
-    }*/
     .blogpost {
         .post-article {
             background-color: @color__blogpost-article--background;
@@ -504,6 +492,22 @@
     .post-article {
         display: block;
         width: 100%;
+    }
+    .post-content .post-title,
+    .post-content .post-excerpt {
+        padding: 0;
+    }
+    .post-image ~ .post-footer {
+        width: 100%;
+        padding: 10px 0;
+        position: relative;
+        left: 0;
+        top: 0;
+        text-align: left;
+        
+    }
+    .post-footer .timestamp {
+        margin: 0 0 10px;
     }
     .post-image .image-link {
         height: auto;
