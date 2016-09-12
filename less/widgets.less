@@ -106,21 +106,29 @@
     // Four columns
     .columns-four-first {
         padding-left: 30px;
-        @media only screen and (max-width: 925px) {
-            padding: 0 30px;
+        @media only screen and (max-width: 479px) {
+            padding: 0 30px; 
         }
     }
-    .columns-four-second,
+    .columns-four-second {
+        @media only screen and (max-width: 925px) {
+            padding-right: 30px;
+        }
+        @media only screen and (max-width: 479px) {
+            padding: 0 30px; 
+        }
+
+    }
     .columns-four-third {
+        @media only screen and (max-width: 925px) {
+            padding-left: 30px;
+        }
         @media only screen and (max-width: 479px) {
             padding: 0 30px; 
         }
     }
     .columns-four-fourth {
         padding-right: 30px;
-        @media only screen and (max-width: 925px) {
-            padding-right: 30px;
-        }
         @media only screen and (max-width: 479px) {
             padding: 0 30px; 
         }
