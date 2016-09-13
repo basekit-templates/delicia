@@ -181,18 +181,13 @@
         .justify-content(flex-start);
         .align-items(center);
 
-        width: 100%;
+        width: 85%;
         margin: 0 0 0 auto;
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 200px center !important;
 
-        /*@media only screen and (max-width : 1024px) {
-            width: 85%;
-        }*/
         @media @tablet {
-            /*width: 100%;*/
-            background-position: center !important;
+           width: 100%;
         }
     }
     .content-wrap {
@@ -202,15 +197,15 @@
         .align-items(center);
 
         position: relative;
-        left: 90px;
+        left: -150px;
         width: auto;
         min-height: 300px;
         z-index: 99;
         padding: 0;
         background-color: @color__feature-content--background;
 
-        @media only screen and (max-width : 1024px) {
-            left: 30px;
+        @media only screen and (max-width : 1300px) {
+            left: -90px;
         }
         @media @tablet {
             .align-items(flex-end);
