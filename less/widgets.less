@@ -426,25 +426,24 @@ hr {
         .align-items(stretch);
         .align-content(stretch);
 
+        margin: 0 -10px;
+
         @media @tablet {
             display: inline-block;
             width: 100%;
+            margin: 0;
         }
     }
     .tweet-item {
         position: relative;
         padding: 20px 20px 20px 0;
-        margin: 0 0 20px 35px;
+        margin: 0 10px 20px;
         background-color: @color__twitter-item--background;
         border: 1px solid darken(@color__twitter-item--background, 9%);
 
-        -webkit-flex: 1 0 17%;
-        -ms-flex: 1 0 17%;
-        flex: 1 0 17%;
-
-        &:first-child {
-            margin: 0 0 20px 0;
-        }
+        -webkit-flex: 1 0 45%;
+        -ms-flex: 1 0 45%;
+        flex: 1 0 45%;
 
         @media @tablet {
             display: block;
