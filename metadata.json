@@ -89,7 +89,7 @@
             "font-size": "36px",
             "font-weight": "400",
             "line-height": "46px",
-            "color": "@color-swatch7",
+            "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
         "font9": {
@@ -97,7 +97,7 @@
             "font-size": "18px",
             "font-weight": "300",
             "line-height": "28px",
-            "color": "@color-swatch7",
+            "color": "@color-swatch5",
             "letter-spacing": "0px"
         },
         "font10": {
@@ -186,7 +186,7 @@
         "feature": {
             "color__feature-headline--text": "@font-swatch8-color",
             "color__feature-strapline--text": "@font-swatch9-color",
-            "color__feature-content--background":"@color-swatch2",
+            "color__feature-content--background":"@color-swatch1",
             "color__feature-button--text": "@font-swatch7-color",
             "color__feature-button--background": "@font-swatch7-background-color",
 
@@ -209,6 +209,11 @@
         "image": {
             "color__image-title--text": "@color-swatch4",
             "color__image-description--text": "@color-swatch5"
+        },
+        "slideshow": {
+            "color__slideshow-caption--background": "#000000",
+            "color__slideshow-title--text": "@color-swatch1",
+            "color__slideshow-description--text": "@color-swatch1"
         },
         "twitter": {
             "color__twitter-item--background": "@color-swatch7",

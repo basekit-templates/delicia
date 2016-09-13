@@ -150,6 +150,7 @@
 
 
 
+
 // -----------------------------
 // Feature
 // -----------------------------
@@ -176,34 +177,45 @@
         }
     }
     .background-image {
-        display: block;
-        width: 80%;
-        margin: 0 0 0 auto;
-        background-size: cover;
-        background-repeat: no-repeat;
-        @media only screen and (max-width : 1024px) {
-            width: 85%;
-        }
-        @media @tablet {
-            width: 100%;
-        }
-    }
-    .content-wrap {
         .flex-display;
         .justify-content(flex-start);
         .align-items(center);
 
-        position: absolute;
-        left: 150px;
+        width: 100%;
+        margin: 0 0 0 auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 200px 0% !important;
+
+        /*@media only screen and (max-width : 1024px) {
+            width: 85%;
+        }*/
+        @media @tablet {
+            /*width: 100%;*/
+            background-position: center 0% !important;
+        }
+    }
+    .content-wrap {
+
+        .flex-display;
+        .justify-content(flex-start);
+        .align-items(center);
+
+        position: relative;
+        left: 30px;
         width: auto;
+        min-height: 300px;
         z-index: 99;
         padding: 0;
+        background-color: @color__feature-content--background;
 
         @media only screen and (max-width : 1024px) {
             left: 30px;
         }
         @media @tablet {
             .align-items(flex-end);
+            width: 100%;
+            min-height: inherit;
             position: relative;
             left:0;
             background: fade(#000000,10%); 
@@ -213,8 +225,8 @@
     .content-inner-wrap {
         position: relative;
         max-width: 450px;
-        padding: 20px 40px;
-        background-color: @color__feature-content--background;
+        padding: 20px 40px 20px 0;
+        
         @media @tablet {
             max-width: inherit;
             width: 100%;
@@ -225,10 +237,13 @@
             background: linear-gradient(transparent, #000000); /* Standard syntax (must be last) */
             text-align: center;
         }
+
+        @media only screen and (max-width: 600px) {
+            padding: 20px;
+        }
     }
     .headline {
         padding-bottom: 0;
-
         font-family: @font__feature-headline--font-family;
         color: @color__feature-headline--text;
         font-size: @font__feature-headline--font-size;
@@ -244,28 +259,29 @@
         line-height: @font__feature-strapline--line-height;
         letter-spacing: @font__feature-strapline--letter-spacing;
     }
+    .headline,
+    .strapline {
+        @media @tablet {
+            color: @color-swatch1;
+        }
+    }
     .button {
-        position: absolute;
-        bottom: -44px;
-        left: 0;
-        width: auto;
-        margin: 0;
-        padding: 0 40px;
+        margin-top: 5px;
+        padding: 0 20px;
         font-size: 14px;
         line-height: 24px;
         color: @color__feature-button--text;
         background-color: @color__feature-button--background;
         .border-radius(0);
         @media @tablet {
-            position: relative;
-            bottom: 0;
-            margin-top: 10px;
-            padding: 0 20px;
             background-color: transparent;
             border: 1px solid @color__feature-button--text;
             &:hover {
                 border: 1px solid transparent;
             }
+        }
+        @media only screen and (max-width: 600px) {
+            width: auto;
         }
     }
 }
