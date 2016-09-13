@@ -210,6 +210,11 @@
             "color__image-title--text": "@color-swatch4",
             "color__image-description--text": "@color-swatch5"
         },
+        "twitter": {
+            "color__twitter-item--background": "@color-swatch7",
+            "color__twitter-account-name--text": "@color-swatch3",
+            "color__twitter-tweet--text": "@color__p--text"
+        },
         "socialicons": {
             "color__socialicons--icon": "@color-swatch4"
         },

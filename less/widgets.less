@@ -350,10 +350,210 @@
 
 
 // -----------------------------
+//  Divider (Keyline)
+// -----------------------------
+
+hr.rule {
+    height: 1px;
+    background-color: lighten(@color-swatch6, 20%);
+}
+
+
+// Horizontal rule in blog posts
+hr {
+    height: 1px;
+    border: 0;
+    margin-bottom: 18px;
+    background-color: lighten(@color-swatch6, 20%);
+}
+
+
+
+// -----------------------------
 // Yelp
 // -----------------------------
 
 .yelpreview .review-list {
     margin-left: 0;
 }
+
+
+
+
+// -----------------------------
+// Image Widget
+// -----------------------------
+
+.imagewidget .caption {
+    padding: 0 30px;
+    .image-title {
+        font-family: @font__h4--font-family;
+        font-size: @font__h4--font-size;
+        line-height: @font__h4--line-height;
+        color: @color__image-title--text;
+        @media only screen and (max-width: 735px) {
+            font-size: bkscale(@font__h4--font-size,0.9);
+            line-height: bkscale(@font__h4--line-height,0.9);
+        }
+    }
+    .image-description {
+        font-size: @font__p--font-size;
+        line-height: @font__p--line-height;
+        color: @color__image-description--text;
+        @media @tablet {
+            font-size: bkscale(@font__p--font-size,0.9);
+            line-height: bkscale(@font__p--line-height,0.9);
+        }
+    }
+}
+
+.responsivecolumns .imagewidget .caption {
+    padding: 0;
+}
+
+
+
+
+// -----------------------------
+// #Twitter Widget
+// -----------------------------
+
+.twitter {
+    .tweet-list {
+        .flex-display;
+        .flex-wrap(wrap);
+        .justify-content(space-between);
+        .align-items(stretch);
+        .align-content(stretch);
+
+        @media @tablet {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    .tweet-item {
+        position: relative;
+        padding: 20px 20px 20px 0;
+        margin: 0 0 20px 35px;
+        background-color: @color__twitter-item--background;
+        border: 1px solid darken(@color__twitter-item--background, 9%);
+
+        -webkit-flex: 1 0 17%;
+        -ms-flex: 1 0 17%;
+        flex: 1 0 17%;
+
+        &:first-child {
+            margin: 0 0 20px 0;
+        }
+
+        @media @tablet {
+            display: block;
+            margin: 0 0 20px 0;
+        }
+
+        p {
+            color: @color__twitter-tweet--text;
+            padding-bottom: 0;
+            font-size: bkscale(@font__p--font-size,0.9);
+            line-height: bkscale(@font__p--line-height,0.9);
+        }
+        .tweet-wrap {
+            width: 100%;
+            padding: 0 0 0 85px;
+            text-align: left;
+
+            .flex-display;
+            .flex-direction(column);
+            .flex-wrap(wrap);
+            .justify-content(center);
+            .align-items(stretch);
+            .align-content(center);
+        }
+        .tweet-wrap a {
+            word-break: break-word;
+            word-wrap: break-word;
+            color: @color-swatch3;
+        }
+        .avatar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .avatar-link {
+            max-width: 48px;
+        }
+        .avatar {
+            display: inline-block;
+            vertical-align: top;
+            @media @mobile {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        .account-link {
+            color: @color__twitter-account-name--text;
+            font-family: @font__p--font-family;
+            font-size: bkscale(@font__p--font-size,0.9);
+            line-height: bkscale(@font__p--line-height,0.9);
+            font-weight: @font__p--font-weight;
+            letter-spacing: @font__p--letter-spacing;
+            text-transform: uppercase;
+
+        }
+        .tweet-content {
+            position: relative;
+            width: 100%;
+            padding-bottom: 12px;
+            margin-bottom: 5px;
+
+            a {
+                word-wrap: break-word;
+                // Fix for IE
+                -ms-hyphens: auto;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 35px;
+                height: 1px;
+                background-color: darken(@color__twitter-item--background, 11%);
+            }
+        }
+        .tweet-metadata {
+            font-size: 90%;
+
+            .timestamp,
+            .via {
+                color: darken(@color__body--background, 30%);
+            }
+            .timestamp,
+            .via,
+            a,
+            span {
+                font-size: bkscale(@font__p--font-size,0.75);
+                line-height: bkscale(@font__p--line-height,0.7);
+            }
+            .retweeted-by {
+                display: inline-block;
+                width: 100%;
+                color: darken(@color__body--background, 30%);
+            }
+        }
+    }
+}
+
+.responsivecolumns .twitter {
+    .tweet-list,
+    .tweet-item {
+        display: block;
+    }
+    .tweet-item,
+    .tweet-item:first-child {
+        margin: 0 0 20px 0;
+    }
+}
+
 
