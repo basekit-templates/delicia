@@ -42,7 +42,7 @@
     .widget[data-name="menusections"],
     .widget[data-name="menu"],
     .widget[data-name="image"] {
-        margin: 0 auto;
+        margin: 10px auto;
         max-width: inherit;
         width: 100%;
         &:last-child {
@@ -569,4 +569,72 @@ hr {
     }
 }
 
+
+
+// -----------------------------
+// Blockquote
+// -----------------------------
+
+.content blockquote {
+    position: relative;
+    quotes: "“" "”" "“" "”";
+    margin-right: 5%;
+    padding-left: 35px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    font-family: @font__h3--font-family;
+    color: @color__h3--text;
+    @media @mobile {
+        margin-right: 0;
+    }
+    &:before {
+        position: absolute;
+        left: 0;
+        top: -5px;
+        font-size: 60px;
+        line-height: 50px;
+        padding: 0;
+        width: 28px;
+        height: 32px;
+        text-align: center;
+        vertical-align: middle;
+        color: @color-swatch4;
+    }
+    p, a {
+        font-size: @font__h4--font-size;
+        line-height: @font__h4--line-height;
+    }
+    h1, h2, h3, h4, p, a {
+        font-family: @font__h3--font-family;
+        color: @color__h3--text;
+
+    }
+}
+
+
+
+
+// -----------------------------
+// Click to Call Widget
+// -----------------------------
+
+.clicktocall {
+    a:hover {
+        text-decoration: none;
+        cursor: text;
+    }
+    @media @mobile {
+        .phone-number-link {
+            width: 100%;
+            padding: 8px 20px;
+            text-align: center;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+        .label {
+            color: @color__button--text;
+        }
+    }
+}
 
