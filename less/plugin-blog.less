@@ -9,10 +9,16 @@
     .post-image {
         background-position: inherit;
         .image-link {
-            height: 350px;
+            height: 450px;
             background-position: inherit;
             background-size: cover;
             background-position: center;
+            @media only screen and (max-width: 1500px) {
+                height: 400px;
+            }
+            @media only screen and (max-width: 1200px) {
+                height: 350px;
+            }
             @media @tablet {
                 height: 250px;
             }
