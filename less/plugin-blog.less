@@ -179,12 +179,14 @@
         .align-items(center);
         .align-content(center);
 
-        border-bottom: 1px solid darken(@color-swatch1, 9%);
-
         @media only screen and (max-width: 800px) {
             margin-bottom: 20px 0;
             padding-bottom: 10px;
         }
+    }
+
+    .post-article:nth-child(even) {
+        background-color: darken(@color-swatch1, 5%);
     }
 
     .post-article,
