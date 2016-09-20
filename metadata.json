@@ -86,9 +86,9 @@
         },
         "font8": {
             "font-family": "\"Alegreya\", serif",
-            "font-size": "42px",
+            "font-size": "56px",
             "font-weight": "400",
-            "line-height": "52px",
+            "line-height": "65px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
