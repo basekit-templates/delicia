@@ -9,6 +9,10 @@
     .flex-container {
         margin-bottom: 0;
         border-bottom: none;
+        border-top: 1px solid darken(@color-swatch1, 9%);
+        @media @tablet {
+            padding: 10px 0;
+        }
     }
 }
 
@@ -41,7 +45,7 @@
     }
     .widget {
         @media @tablet {
-            margin-bottom: 20px;
+            margin: 10px 0;
         }
     }
 }
