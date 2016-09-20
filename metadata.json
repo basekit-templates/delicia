@@ -85,7 +85,7 @@
             "background-color-hover": "darken(@color-swatch3, 10%)"
         },
         "font8": {
-            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-family": "\"Alegreya\", serif",
             "font-size": "50px",
             "font-weight": "400",
             "line-height": "58px",
