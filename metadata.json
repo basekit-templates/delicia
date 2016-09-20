@@ -86,9 +86,9 @@
         },
         "font8": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
-            "font-size": "56px",
+            "font-size": "50px",
             "font-weight": "400",
-            "line-height": "65px",
+            "line-height": "58px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
