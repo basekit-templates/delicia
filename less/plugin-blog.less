@@ -161,6 +161,7 @@
 // -------------------------------------------
 
 .blogpostlist {
+
     margin-bottom: 20px;
 
     .blog-home-link {
@@ -178,6 +179,7 @@
         width: 100%;
         margin-bottom: 0;
         padding: 0;
+        border-bottom: 1px solid darken(@color-swatch1, 8%);
 
         .flex-display;
         .justify-content(center);
@@ -249,29 +251,6 @@
         }
     }
 
-    // Blog Post Footer
-
-    .post-article > .post-footer {
-        .flex-order(0);
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        text-align: center;
-        @media only screen and (max-width: 800px) {
-            position: relative;
-            left: inherit;
-            right: 0;
-        }
-        .timestamp {
-            @media only screen and (max-width: 800px) {
-                position: absolute;
-                right: 30px;
-                bottom: 10px;
-                padding-right: 40px;
-            }
-        }
-    }
-
     // Posts with IMAGE
     // ---------------------------
     .post-image + .post-content { 
@@ -305,7 +284,9 @@
             height: 0;
         }
     }
-    .post-image ~ .post-footer {
+
+    // Posts Footer
+    .post-footer {
         width: 50%;
         position: absolute;
         left: 50%;
@@ -322,7 +303,7 @@
             max-width: 700px;
             margin: 0 auto;
             padding-right: 40px;
-            color: lighten(@color__p--text,30%);
+            color: lighten(@color__p--text,15%);
             @media only screen and (max-width: 800px) {
                 max-width: inherit;
                 position: absolute;
