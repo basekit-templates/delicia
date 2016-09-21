@@ -1,8 +1,8 @@
 {
     "name": "delicia",
     "widgetVersion":2,
-    "thumbnail": "thumbnail.png",
-    "screenshot": "delicia-screenshot.jpg",
+    "thumbnail": "delicia-screenshot.jpg",
+    "screenshot": "delicia-screenshot-high.jpg",
     "templateType":"standard",
     "pageTypes": ["home"],
     "images": [
