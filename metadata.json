@@ -82,7 +82,7 @@
             "color": "@color-swatch7",
             "letter-spacing": "1px",
             "background-color": "@color-swatch3",
-            "background-color-hover": "darken(@color-swatch3, 10%)"
+            "background-color-hover": "darken(@color-swatch3, 7%)"
         },
         "font8": {
             "font-family": "\"Alegreya\", serif",
@@ -225,8 +225,9 @@
         },
         "blog": {
             "color__blogsearch-legend--text": "@color__form-legend--text",
-            "color__blogpostlist-title--text": "@color__secondary",
-            "color__blogpost-title--text": "@font-swatch1-color"
+            "color__blogpostlist-title--text": "@color-swatch4",
+            "color__blogpost-title--text": "@font-swatch1-color",
+            "color__blogpost-article--background": "@color-swatch7"
         },
         "ecommerce": {
             "color__ecomproduct-images--background": "transparent",

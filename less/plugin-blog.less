@@ -214,8 +214,12 @@
             min-height:250px;
         }
     }
+
+    .title-link {
+        color: @color__blogpostlist-title--text;
+    }
     .title-link:hover {
-        color: fade(@color-swatch2, 70%);
+        color: @color-swatch3;
         text-decoration: none;
     }
 
@@ -249,6 +253,7 @@
         background-color: transparent;
         border: 1px solid @color__button--background;
         &:hover {
+            color: @color__button--background--hover;
             text-decoration: none;
         }
     }
