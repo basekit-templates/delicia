@@ -99,7 +99,7 @@ input[type="search"]:focus {
 
 legend,
 .legend {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-family: @font__h3--font-family;
     font-size: @font__h3--font-size;
     font-weight: @font__h3--font-weight;
@@ -111,8 +111,8 @@ legend,
 .label {
     color: @color__form-label--text;
     font-family: @font__p--font-family;
-    font-size: bkscale(@font__p--font-size,0.8);
-    line-height: bkscale(@font__p--line-height,0.8);
+    font-size: @font__p--font-size;
+    line-height: @font__p--line-height;
     opacity: 0.9;
 }
 
@@ -151,14 +151,8 @@ legend,
 // -----------------------------
 
 .blogsearch {
-    text-align: center;
     .form-body {
         margin: 0 auto;
-    }
-    .legend {
-        width: 100%;
-        margin: 0 auto 20px;
-        text-align: center;
     }
     .label {
         display: none;
@@ -307,6 +301,7 @@ button,
         button,
         .button {
             .border-radius (3px);
+            margin-left: 0;
         }
     }
 }
