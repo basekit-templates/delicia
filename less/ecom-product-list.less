@@ -157,27 +157,23 @@
     top: 15px;
     .transform(rotate(90deg));
 
-    @media @tablet-860px {
-        right: 48px;
-    }
-
     &:hover .toggle-item {
          background: @color__button--background;
     }
 
     .animate {
-        background: fade(@color__button--background, 50%);
+        background: fade(@color__button--background, 80%);
         .border-radius(50%);
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 30px;
         opacity: 1;
         .transform(translate(-50%, -50%));
         z-index: -1;
     }
 
     .toggle-items .toggle-item {
-        background: fade(@color__button--background, 50%);
+        background: fade(@color__button--background, 80%);
         .border-radius(50%);
         float: left;
         margin: 0 3px;
@@ -223,7 +219,7 @@
         .border-radius(50%);
         position: absolute;
         top: 55%;
-        left: 35%;
+        left: 30px;
         opacity: 1;
         height: 25px;
         width: 25px;
