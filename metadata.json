@@ -4,7 +4,7 @@
     "thumbnail": "thumbnail.png",
     "screenshot": "delicia-screenshot.jpg",
     "templateType":"standard",
-    "pageTypes": ["home","blogpost", "blogpostlist", "ecomproductlist"],
+    "pageTypes": ["home"],
     "images": [
         "images/feature.jpg",
         "images/logo.png"
