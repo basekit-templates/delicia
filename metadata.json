@@ -227,7 +227,6 @@
             "color__blogsearch-legend--text": "@color__form-legend--text",
             "color__blogpostlist-title--text": "@color-swatch4",
             "color__blogpost-title--text": "@font-swatch1-color",
-            "color__blogpost-article--background": "@color-swatch7"
         },
         "ecommerce": {
             "color__ecomproduct-images--background": "transparent",
