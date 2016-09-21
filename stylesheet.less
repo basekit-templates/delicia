@@ -36,13 +36,16 @@
 // Template Styles
 // -----------------------------
 
-.bk-pt-home .container {
-    margin-top: 3em;
-    @media @tablet {
-        margin-top: 2.5em;
+.bk-pt-home,
+.bk-pt-default {
+    .container {
+        max-width: 1200px;
+        margin: 3em auto 0;
+        @media @tablet {
+            margin: 2.5em auto 0;
+        }
     }
 }
-
 
 
 
