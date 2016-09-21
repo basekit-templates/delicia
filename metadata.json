@@ -229,8 +229,6 @@
             "color__blogpost-title--text": "@font-swatch1-color"
         },
         "ecommerce": {
-            "color__ecomproductslist-label--text": "@color__form-label--text",
-            "color__ecomproductslist-product-item--background": "@color-swatch7",
             "color__ecomproduct-images--background": "transparent",
             "color__ecomproduct-images--background": "darken(@color-swatch1, 6%)",
             "color__ecomproduct-content--background": "@color-swatch7",
