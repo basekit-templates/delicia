@@ -269,7 +269,7 @@ legend,
 button,
 .button {
     min-height: 44px;
-    padding: 6px 15px 4px;
+    padding: 7px 15px;
     color: @color__button--text;
     background-color: @color__button--background;
     border: 2px solid @color__button--border;
@@ -297,6 +297,16 @@ button,
             -moz-border-radius: 0 3px 3px 0;
             border-radius: 0 3px 3px 0;
             margin-left: -2px;
+        }
+    }
+}
+
+.responsivecolumns {
+    .signupform .form-body,// Signup
+    .blogsearch .form-body { // Blog
+        button,
+        .button {
+            .border-radius (3px);
         }
     }
 }
