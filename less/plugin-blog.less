@@ -160,6 +160,11 @@
 // Posts List Style
 // -------------------------------------------
 
+
+.bk-pt-blogpostlist .blogpostlist .post-article:first-child {
+    border-top: 1px solid darken(@color-swatch1, 9%);
+}
+
 .blogpostlist {
     margin-bottom: 20px;
 
@@ -381,6 +386,9 @@
         display: block;
         width: 100%;
         border-bottom: none;
+    }
+    .post-article:first-child {
+        border-top: none;
     }
     .post-article:nth-child(even) {
         background-color: @color-swatch1;
