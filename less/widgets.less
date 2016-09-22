@@ -44,12 +44,9 @@
         &:last-child {
             margin-bottom: 0;
         }
-    }
-}
-
-.bk-pt-default .container .widget {
-    @media only screen and (min-width: 769px) {
-        margin: 10px auto;
+        @media only screen and (min-width: 769px) {
+            margin: 10px auto;
+        }
     }
 }
 
@@ -406,7 +403,9 @@ hr {
 // -----------------------------
 
 .imagewidget .caption {
-    padding: 0 30px;
+    @media only screen and (max-width: 1230px) {
+        padding: 0 30px;
+    }
     .image-title {
         font-family: @font__h4--font-family;
         font-size: @font__h4--font-size;
@@ -449,11 +448,16 @@ hr {
 
         margin: 0 -10px;
 
+        @media only screen and (max-width: 1230px) {
+            margin: 0 30px;
+        }
+
         @media @tablet {
             display: inline-block;
-            width: 100%;
-            margin: 0;
+            width: 90%;
+            margin: 0 5%;
         }
+
     }
     .tweet-item {
         position: relative;
