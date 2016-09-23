@@ -22,9 +22,15 @@
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
         flex-direction: column;
+    }
+}
+
+.header.flex-container {
+    @media @tablet {
         .align-items(flex-start);
     }
 }
+
 // Global style for flex items
 .flex-item {
     -webkit-align-self: auto;
@@ -102,9 +108,9 @@
 
 @media @tablet {
     .flex-logo {
-        margin-top: 30px;
         width: 100%;
         max-width: 90%;
+        margin: 30px auto 0;
         text-align: center;
         .logo-image {
             margin: 0 auto;
