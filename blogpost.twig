@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <script>
+    <script nonce="{{ numberUsedOnce }}">
         if($(".post-article--has-image").length > 0)
         {
         $("body").addClass("blog-post--has-image");
