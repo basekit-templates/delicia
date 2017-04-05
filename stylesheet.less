@@ -11,7 +11,7 @@
 /*@import "@{templateLocal}/bk-v8-test.less";*/
 
 
-@import "@{templateLocal}/less/widgets.less"; 
+@import "@{templateLocal}/less/widgets.less";
 @import "@{templateLocal}/less/widget-gallery.less";    // Gallery Widget
 @import "@{templateLocal}/less/widget-slideshow.less";  // Slideshow Widget
 
@@ -30,6 +30,26 @@
 // Alegreya Google Font
 
 @import 'https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i&subset=latin-ext';
+
+
+.row {
+    background-color: gainsboro;
+    .flex-display;
+    .justify-content(space-between);
+
+
+    &:nth-child(2) {
+        background-color: #eef1ff;
+    }
+
+
+    .column {
+        .align-self(center);
+        .flex(1 0 50%);
+        text-align: center;
+    }
+}
+
 
 
 // -----------------------------
