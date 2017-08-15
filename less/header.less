@@ -429,6 +429,18 @@
     }
 }
 
+// Fix overlay in editor on tablet and mobile
+.flex-nav .widget-overlay {
+    @media @tablet {
+        display: none;
+    }
+}
+.open .flex-nav .widget-overlay {
+    @media @tablet {
+        display: block;
+    }
+}
+
 
 
 
