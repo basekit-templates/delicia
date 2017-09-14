@@ -114,6 +114,7 @@
         text-align: center;
         .logo-image {
             margin: 0 auto;
+            max-width: 250px;
         }
     }
     .flex-companyname {
@@ -200,9 +201,6 @@
             @media @tablet {
                 color: @color-swatch7;
             }
-            @media @mobile {
-                display: none;
-            }
         }
         &:before {
             color: @color__navigation--text;
@@ -279,7 +277,7 @@
         height: 44px;
         width: 40px;
         right: 5%;
-        top: -44px;
+        top: -47px;
         text-indent: 1000px;
         overflow: hidden;
         line-height: 0;
@@ -372,9 +370,11 @@
     @media @tablet {
         display: none;
         width: 100%;
-        &.open {
-            display: block;
-        }
+    }
+}
+.open .navigation-list {
+    @media @tablet {
+        display: block;
     }
 }
 
@@ -431,14 +431,14 @@
 }
 
 // Fix overlay in editor on tablet and mobile
-
-div#page-zones__template-widgets__extendednavigation-navigation-bk-overlay,
-[data-widget-type="extendednavigation"] .widget-overlay {
+.flex-nav .widget-overlay {
     @media @tablet {
-        width: 30%;
-        height: 44px;
-        top: -44px !important;
-        left: inherit !important;
+        display: none;
+    }
+}
+.open .flex-nav .widget-overlay {
+    @media @tablet {
+        display: block;
     }
 }
 
