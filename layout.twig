@@ -49,6 +49,20 @@
     {% block scripts %}
     {% endblock %}
 
+    <!-- Nav Menu Script -->
+    <script nonce="{{ numberUsedOnce }}">
+
+        // Toggles class open to display/hide the whole navigation
+        $(document).on("click", ".navigation-toggle", function() {
+            $( "body" ).toggleClass( "open" );
+        });
+
+        // Toggles class open to add noscroll to body
+        $( ".navigation-toggle" ).click(function() {
+            $( "body" ).toggleClass( "noscroll" );
+        });
+
+    </script>
 
     <!-- imagesLoaded -->
     <script src="{{asset('js/imagesloaded.min.js')}}"></script>
