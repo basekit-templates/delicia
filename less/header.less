@@ -276,8 +276,8 @@
         position: absolute;
         height: 44px;
         width: 40px;
-        right: 5%;
-        top: -47px;
+        right: 15px;
+        top: -45px;
         text-indent: 1000px;
         overflow: hidden;
         line-height: 0;
@@ -364,7 +364,7 @@
 }
 
 // Clears margin on ul, hides navigatio on mobile (made visible in conjunction with navigation-toggle)
-.navigation-list {
+.navigation-body > .navigation-list {
     margin: 0;
     width: auto;
     @media @tablet {
@@ -398,6 +398,7 @@
     border: 1px solid darken(@color__body--background, 10%);
     @media @tablet {
         border: none;
+        position: relative;
     }
     .navigation-item--child {
         @media only screen and (min-width:770px) {
@@ -413,8 +414,17 @@
 .navigation-item {
     @media @tablet {
         display: block;
+
+        .navigation-list--children {
+            display: none;
+        }
+
+        &.folder-open .navigation-list--children  {
+            display: block;
+        }
     }
 }
+
 
 .navigation-item .item-name {
     padding: 4px 12px;
