@@ -74,6 +74,9 @@
         @media only screen and (min-width: 960px) {
             width: 100%;
         }
+        @media @tablet {
+            padding: 0;
+        }
     }
     [data-name="image"] {
         margin: 15px auto;
@@ -82,49 +85,26 @@
     // Two columns
     .columns-two-left {
         padding-left: 30px;
-        @media only screen and (max-width: 660px) {
-            padding: 0 30px;
-        }
     }
     .columns-two-right {
         padding-right: 30px;
-        @media only screen and (max-width: 700px) {
-            padding: 0 30px;
-        }
     }
 
     // Three columns
     .columns-three-left {
         padding-left: 30px;
-        @media only screen and (max-width: 700px) {
-            padding: 0 30px;
-        }
-    }
-    .columns-three-middle {
-        @media only screen and (max-width: 700px) {
-            padding: 0 30px;
-        }
     }
     .columns-three-right {
         padding-right: 30px;
-        @media only screen and (max-width: 700px) {
-            padding: 0 30px;
-        }
     }
 
     // Four columns
     .columns-four-first {
         padding-left: 30px;
-        @media only screen and (max-width: 479px) {
-            padding: 0 30px;
-        }
     }
     .columns-four-second {
         @media only screen and (max-width: 925px) {
             padding-right: 30px;
-        }
-        @media only screen and (max-width: 479px) {
-            padding: 0 30px;
         }
 
     }
@@ -132,14 +112,14 @@
         @media only screen and (max-width: 925px) {
             padding-left: 30px;
         }
-        @media only screen and (max-width: 479px) {
-            padding: 0 30px;
-        }
     }
     .columns-four-fourth {
         padding-right: 30px;
-        @media only screen and (max-width: 479px) {
-            padding: 0 30px;
+    }
+
+    .column {
+        @media @tablet {
+            padding: 0;
         }
     }
 }
