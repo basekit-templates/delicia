@@ -13,9 +13,9 @@
             margin: 50px auto 0;
         }
         @media @tablet {
-                width: 100%;
-                margin: 15px 0 0;
-                padding: 0 30px;
+            width: 100%;
+            margin: 15px 0 0;
+            padding: 0 30px;
         }
     }
 }
@@ -67,6 +67,12 @@
 // -----------------------------
 
 .responsivecolumns {
+    padding: 0 30px;
+
+    @media @tablet {
+        padding: 0;
+    }
+
     .widget {
         display: inline-block;
         width: 100%;
@@ -80,41 +86,6 @@
     }
     [data-name="image"] {
         margin: 15px auto;
-    }
-
-    // Two columns
-    .columns-two-left {
-        padding-left: 30px;
-    }
-    .columns-two-right {
-        padding-right: 30px;
-    }
-
-    // Three columns
-    .columns-three-left {
-        padding-left: 30px;
-    }
-    .columns-three-right {
-        padding-right: 30px;
-    }
-
-    // Four columns
-    .columns-four-first {
-        padding-left: 30px;
-    }
-    .columns-four-second {
-        @media only screen and (max-width: 925px) {
-            padding-right: 30px;
-        }
-
-    }
-    .columns-four-third {
-        @media only screen and (max-width: 925px) {
-            padding-left: 30px;
-        }
-    }
-    .columns-four-fourth {
-        padding-right: 30px;
     }
 
     .column {
@@ -157,12 +128,6 @@
     .background-image,
     .content-wrap {
         min-height: ~"calc(100vh - 104px)";
-        /*@media only screen and (max-width : 1024px) {
-            min-height: 600px;
-        }
-        @media only screen and (max-width: 900px) {
-            min-height: 500px;
-        }*/
         @media @tablet {
             min-height: 450px;
         }
