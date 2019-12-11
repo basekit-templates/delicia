@@ -5,6 +5,7 @@
     "screenshot": "delicia-screenshot-high.jpg",
     "templateType":"standard",
     "pageTypes": ["home"],
+    "versionTenCompatible": 1,
     "images": [
         "images/feature.jpg",
         "images/logo.png"
