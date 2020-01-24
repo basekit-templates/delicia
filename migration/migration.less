@@ -4,17 +4,8 @@
 // -----------------------------
 
 
-#migrated-site {
-
-
-    // Stylesheet overrides
-    // -----------------------------
-
-
-    .container {
-        margin: 0;
-        max-width: 100%;
-    }
+// Stops padding value overriding section move mode styling on mobile devices
+#migrated-site:not(.is-move-mode) {
 
 
     .container .widget[data-name="row"],
@@ -31,7 +22,20 @@
             padding: 0;
         }
     }
+}
 
+
+#migrated-site {
+
+
+    // Stylesheet overrides
+    // -----------------------------
+
+
+    .container {
+        margin: 0;
+        max-width: 100%;
+    }
 
     .container .widget[data-name="row"] {
         display: block;
