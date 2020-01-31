@@ -2,21 +2,22 @@
 // Widgets
 // -----------------------------
 
-.container {
-    .widget {
-        display: inline-block;
-        width: 90%;
-        margin: 50px 30px 0;
-        @media only screen and (min-width: 960px) {
-            display: block;
-            width: 700px;
-            margin: 50px auto 0;
-        }
-        @media @tablet {
-            width: 100%;
-            margin: 15px 0 0;
-            padding: 0 30px;
-        }
+
+.container #page-zones__main > .widget:not([data-name="row"]) {
+    display: inline-block;
+    width: 90%;
+    margin: 50px 30px 0;
+
+    @media only screen and (min-width: 960px) {
+        display: block;
+        width: 700px;
+        margin: 50px auto 0;
+    }
+
+    @media @tablet {
+        width: 100%;
+        margin: 15px 0 0;
+        padding: 0 30px;
     }
 }
 
@@ -25,7 +26,7 @@
 // #Full Width Widgets
 // -----------------------------
 
-.container {
+.container #page-zones__main > {
     .widget[data-name="responsivecolumns"],
     .widget[data-name="responsiveslideshow"],
     .widget[data-widget-type="responsiveslideshow"],
@@ -43,19 +44,21 @@
         margin: 0 auto;
         max-width: inherit;
         width: 100%;
+
         &:last-child {
             margin-bottom: 0;
         }
+
         @media only screen and (min-width: 769px) {
             margin: 10px auto;
         }
     }
 }
 
-.bk-pt-blogpostlist .widget[data-name="blogpostlist"],
-.bk-pt-blogpost .widget[data-name="blogpost"],
-.bk-pt-ecomproduct .widget[data-name="ecomproduct"],
-.bk-pt-store .widget[data-name="ecomproductslist"] {
+.bk-pt-blogpostlist #page-zones__main > .widget[data-name="blogpostlist"],
+.bk-pt-blogpost #page-zones__main > .widget[data-name="blogpost"],
+.bk-pt-ecomproduct #page-zones__main > .widget[data-name="ecomproduct"],
+.bk-pt-store #page-zones__main > .widget[data-name="ecomproductslist"] {
     @media only screen and (min-width: 769px) {
         margin: 0 auto;
     }

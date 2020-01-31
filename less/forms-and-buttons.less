@@ -202,42 +202,51 @@ legend,
 
 
 .responsivecolumns {
-    .signupform,// Signup
-    .blogsearch {// Blog
-        text-align: left;
-        .legend {
+    .columns-three-left,
+    .columns-three-middle,
+    .columns-three-right,
+    .columns-four-first,
+    .columns-four-second,
+    .columns-four-third,
+    .columns-four-fourth {
+
+        .signupform,// Signup
+        .blogsearch {// Blog
             text-align: left;
+            .legend {
+                text-align: left;
+            }
         }
-    }
-    input[type="search"],
-    .signupform .form-body input[type="email"] {
-        border: @form-border;
-    }
-    .signupform .form-body,// Signup
-    .blogsearch .form-body {// Blog
-        width: 100%;
-        margin: inherit;
-        @media only screen and (max-width:1024px) {
+        input[type="search"],
+        .signupform .form-body input[type="email"] {
+            border: @form-border;
+        }
+        .signupform .form-body,// Signup
+        .blogsearch .form-body {// Blog
             width: 100%;
+            margin: inherit;
+            @media only screen and (max-width:1024px) {
+                width: 100%;
+            }
+            @media @tablet {
+                width: 100%;
+            }
         }
-        @media @tablet {
+        // Same style as Mobile
+        .contactform,// Contact Form
+        .signupform .form-body,// Signup
+        .blogsearch .form-body { // Blog
+            display: block;
             width: 100%;
-        }
-    }
-    // Same style as Mobile
-    .contactform,// Contact Form
-    .signupform .form-body,// Signup
-    .blogsearch .form-body { // Blog
-        display: inline-block;
-        width: 100%;
-        margin-right: 0;
-        .input {
-            margin-bottom: 10px;
-        }
-        .button {
-            text-align: center;
-            margin-bottom: 10px;
-            white-space: normal;
+            margin-right: 0;
+            .input {
+                margin-bottom: 10px;
+            }
+            .button {
+                text-align: center;
+                margin-bottom: 10px;
+                white-space: normal;
+            }
         }
     }
 }
