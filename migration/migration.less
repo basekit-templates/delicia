@@ -12,11 +12,6 @@
     @media @tablet {
         padding: 0;
     }
-
-    .widget {
-        display: block;
-        padding: 0;
-    }
 }
 
 
@@ -35,6 +30,11 @@
 
     .container .widget[data-name="row"] {
         display: block;
+
+
+        .widget + .widget {
+            margin-top: 16px;
+        }
     }
 
 
@@ -62,12 +62,35 @@
 
     // Migration styles
     // -----------------------------
-    
+
+
+    // Applies spacing to  certails widgets to mimic templte container width
+    &.bk-pt-default .container #page-zones__main >,
+    &.bk-pt-home .container #page-zones__main > {
+        .widget[data-name="responsivecolumns"],
+        .widget[data-name="responsiveslideshow"],
+        .widget[data-widget-type="responsiveslideshow"],
+        .widget[data-name="youtube"],
+        .widget[data-name="twitter"],
+        .widget[data-name="gallery"],
+        .widget[data-name="blogpostlist"],
+        .widget[data-widget-type="blogpostlist"],
+        .widget[data-name="blogpost"],
+        .widget[data-widget-type="blogpost"],
+        .widget[data-name="ecomproductslist"],
+        .widget[data-name="ecomproduct"],
+        .widget[data-name="ecomfeaturedproducts"],
+        .widget[data-name="image"] {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+        }
+    }
+
     
     // Applies spacing to widgets to mimic container width
     .empty-zone,
     #page-zones__main:empty,
-    #page-zones__main > .widget:not([data-name="row"]),
     .row:not(.row--width-no-padding) .row__container {
         margin-left: auto;
         margin-right: auto;
@@ -79,7 +102,7 @@
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]),
     #page-zones__main > .widget:not([data-name="row"]) + [data-name="row"]:not(:last-child),
     &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
-    #page-zones__main > .widget:not([data-name="row"]):first-child {
+    #page-zones__main > .widget:not([data-name="row"]):not([data-name="ecomproductlist"]):not([data-name="ecomproduct"]):not([data-name="blogpostlist"]):not([data-name="blogpost"]):first-child {
         margin-top: 3em;
 
         @media @mobile {
@@ -89,7 +112,7 @@
 
     
     // Move spacing to last widget in the main zone (not sections)
-    #page-zones__main > .widget:not([data-name="row"]):last-child {
+    #page-zones__main > .widget:not([data-name="row"]):not([data-name="ecomproductlist"]):not([data-name="ecomproduct"]):not([data-name="blogpostlist"]):not([data-name="blogpost"]):last-child {
         margin-bottom: 50px;
     }
 }
