@@ -28,43 +28,44 @@
 
     <!-- Footer Include -->
     {% include "includes/footer.twig" %}
-
 </div>
 
 {% endblock %}
 
-
 {% block scripts %}
     <script nonce="{{ numberUsedOnce }}">
-        $(document).on("click", ".toggle-filter", function() {
-            $( "body" ).toggleClass( "filters-open" );
-        });
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".toggle-filter").forEach(function (button) {
+                button.addEventListener("click", function () {
 
-        $(function() {
-
-        $(".toggle-filter").click(function() {
-
-            $(this).prepend('<span class="animate"></span>')
-                $(".animate").animate({
-                    width: 80,
-                    height: 80,
-                    opacity: 0
-                 },
-                 500,
-                 function() {
-                    $(this).remove();
-                 });
-
-                $(this).toggleClass('active');
-           })
-        });
-
-        $(document).ready(function(){
-            if ( $(".button").hasClass("button--clear")) {
-                $("body").addClass("clear-filters");
+                document.body.classList.toggle("filters-open");
+            
+                const span = document.createElement("span");
+                span.classList.add("animate");
+                this.prepend(span);
+            
+                span.style.position = "absolute";
+                span.style.width = "0px";
+                span.style.height = "0px";
+                span.style.opacity = "1";
+                span.style.transition = "width 0.5s, height 0.5s, opacity 0.5s";
+                setTimeout(() => {
+                    span.style.width = "80px";
+                    span.style.height = "80px";
+                    span.style.opacity = "0";
+                });
+            
+                setTimeout(() => {
+                    span.remove();
+                }, 500);
+            
+                this.classList.toggle("active");
+                });
+            });
+            
+            if (document.querySelector(".button.button--clear")) {
+                document.body.classList.add("clear-filters");
             }
         });
     </script>
-
-
 {% endblock %}

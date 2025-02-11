@@ -24,33 +24,45 @@
 
 {% block scripts %}
 
-    <!-- Image zoom on hover on single product -->
-    <script nonce="{{ numberUsedOnce }}">
-        // Run immediately and assign a global variable (touch_enabled) so it is accessible anywhere.
-
-        // First try to detect (not entirely reliable)
-        window.touch_enabled = !!('ontouchstart' in window) || !!('onmsgesturechange' in window);
-
-        // Overwrite/set touch enabled to false on mousemove
-        $(window).on('mousemove', function() { window.touch_enabled = false; });
-
-        // Overwrite/set touch enabled to true on touchstart
-        $(window).on('touchstart', function () { window.touch_enabled = true; });
-
-        if(window.touch_enabled == false){
-            $('.product-image')
-            // tile mouse actions
-            .on('mouseover', function(){
-              $(this).children('.image-link').css({'transform': 'scale(2)'});
-            })
-            .on('mouseout', function(){
-              $(this).children('.image-link').css({'transform': 'scale(1)'});
-            })
-            .on('mousemove', function(e){
-              $(this).children('.image-link').css({'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + '% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +'%'});
-            })
-        }
-
-    </script>
-
+  <script nonce="{{ numberUsedOnce }}">
+    window.touch_enabled = 'ontouchstart' in window || 'onmsgesturechange' in window;
+    
+    window.addEventListener('mousemove', function () {
+      window.touch_enabled = false;
+    });
+    
+    window.addEventListener('touchstart', function () {
+      window.touch_enabled = true;
+    });
+    
+    if (window.touch_enabled === false) {
+      document.querySelectorAll('.product-image').forEach(function (element) {
+        element.addEventListener('mouseover', function () {
+          const imageLink = element.querySelector('.image-link');
+          if (imageLink) {
+            imageLink.style.transform = 'scale(2)';
+          }
+        });
+    
+        element.addEventListener('mouseout', function () {
+          const imageLink = element.querySelector('.image-link');
+          if (imageLink) {
+            imageLink.style.transform = 'scale(1)';
+          }
+        });
+    
+        element.addEventListener('mousemove', function (e) {
+          const imageLink = element.querySelector('.image-link');
+          if (imageLink) {
+            const rect = element.getBoundingClientRect();
+            const offsetX = e.pageX - rect.left - window.scrollX;
+            const offsetY = e.pageY - rect.top - window.scrollY;
+            const xPercent = (offsetX / element.offsetWidth) * 100;
+            const yPercent = (offsetY / element.offsetHeight) * 100;
+            imageLink.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+          }
+        });
+      });
+    }
+</script>
 {% endblock %}

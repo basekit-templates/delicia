@@ -23,9 +23,8 @@
 
 {% block scripts %}
     <script nonce="{{ numberUsedOnce }}">
-        if($(".post-article--has-image").length > 0)
-        {
-        $("body").addClass("blog-post--has-image");
+        if (document.querySelector(".post-article--has-image")) {
+            document.body.classList.add("blog-post--has-image");
         }
     </script>
 {% endblock %}
