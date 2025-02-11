@@ -22,33 +22,27 @@
         {% block content %}
         {% endblock %}
 
-
     {% include basekit.bodyScript %}
-
-
-     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="{{asset('js/custom.js')}}"></script>
-
 
     {% block scripts %}
     {% endblock %}
 
-    <!-- Nav Menu Script -->
     <script nonce="{{ numberUsedOnce }}">
-
-        // Toggles class open to display/hide the whole navigation
-        $(document).on("click", ".navigation-toggle", function() {
-            $( "body" ).toggleClass( "open" );
+        document.querySelector(".navigation-toggle").addEventListener("click", function () {
+            document.querySelector(".bk-extendednavigation").classList.toggle("open");
+            document.body.classList.toggle("noscroll");
         });
-
-        // Toggles class open to add noscroll to body
-        $( ".navigation-toggle" ).click(function() {
-            $( "body" ).toggleClass( "noscroll" );
+    
+        document.querySelectorAll(".navigation-item.folder .item-name--parent").forEach(function (element) {
+            element.addEventListener("click", function () {
+                this.parentElement.classList.toggle("open-folder");
+            });
         });
-
+        
+        document.querySelector(".header-search-icon").addEventListener("click", function () {
+            document.querySelector(".bk-extendednavigation").classList.toggle("open");
+            document.body.classList.toggle("noscroll blogsearch-open");
+        });
     </script>
 
     <!-- imagesLoaded -->
@@ -69,7 +63,6 @@
             });
         };
     </script>
-
 
 </body>
 </html>
